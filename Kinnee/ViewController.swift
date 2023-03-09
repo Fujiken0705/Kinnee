@@ -7,11 +7,59 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // 振動機能の追加
+    let feedbackGenerator = UISelectionFeedbackGenerator()
+
+    //　メニューの数をリストで定義
+    let menus : [String] = ["腕立て伏せ","腹筋"]
+    let sets : [Int] = [3,3]
+
+    @IBOutlet weak var myTableView: UITableView!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "HOME"
+        myTableView.dataSource = self
+        myTableView.delegate = self
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menus.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath)
+
+            cell.textLabel?.text = menus[indexPath.row]
+            cell.imageView?.image = UIImage(systemName: menus[indexPath.row])
+
+            return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            // 振動
+            feedbackGenerator.selectionChanged()
+
+        case 1:
+            // 振動
+            feedbackGenerator.selectionChanged()
+
+        default:
+            break
+        }
+    }
+
+
+    @IBAction func showModal(_ sender: Any) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "addMenuView")
+        nextView.sheetPresentationController?.detents = [.medium(), .large()]
+        //ここがpushとは違う
+        self.present(nextView, animated: true, completion: nil)
     }
 
 

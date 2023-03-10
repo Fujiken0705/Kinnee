@@ -8,10 +8,10 @@
 import Foundation
 import RealmSwift
 
-class Profile: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var rep = ""
-    @objc dynamic var set = ""
+class Menudata: Object {
+    @objc dynamic var name : String = ""
+    @objc dynamic var rep : Int = 0
+    @objc dynamic var set : Int = 0
 
     override static func primaryKey() -> String? {
         return "name"

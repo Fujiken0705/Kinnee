@@ -64,11 +64,11 @@
 		D7159E6429B97495001D1B54 /* Kinnee */ = {
 			isa = PBXGroup;
 			children = (
-				D7159E6529B97495001D1B54 /* AppDelegate.swift */,
-				D7159E7B29BA4B56001D1B54 /* menudata.swift */,
-				D7159E6729B97495001D1B54 /* SceneDelegate.swift */,
-				D7159E7929BA1C45001D1B54 /* ModalViewController.swift */,
 				D7159E6929B97495001D1B54 /* ViewController.swift */,
+				D7159E7929BA1C45001D1B54 /* ModalViewController.swift */,
+				D7159E7B29BA4B56001D1B54 /* menudata.swift */,
+				D7159E6529B97495001D1B54 /* AppDelegate.swift */,
+				D7159E6729B97495001D1B54 /* SceneDelegate.swift */,
 				D7159E6B29B97495001D1B54 /* Main.storyboard */,
 				D7159E6E29B97497001D1B54 /* Assets.xcassets */,
 				D7159E7029B97497001D1B54 /* LaunchScreen.storyboard */,

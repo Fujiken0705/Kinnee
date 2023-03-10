@@ -4,7 +4,7 @@
 //
 //  Created by KentoFujita on 2023/03/09.
 //
-
+import RealmSwift
 import UIKit
 
 class ModalViewController : UIViewController{
@@ -24,5 +24,13 @@ class ModalViewController : UIViewController{
 
     @IBAction func closeModal() {
         self.dismiss(animated: true, completion: nil)
+        do{let realm = try Realm()
+            let item:Menudata = Menudata(value: ["name" : trainingname,"rep": trainingrep,"set": trainingset])
+            try realm.write {
+                realm.add(item,update: .modified)
+            }
+        }catch{
+            print("エラー")
+        }
     }
 }

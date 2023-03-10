@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // 振動機能の追加
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
     //　メニューの数をリストで定義
-    let menuitems = [menuitem]()
-    let menuname = menuitems.name
+    let menuitems = Results<Menudata>?.self
 
     @IBOutlet weak var myTableView: UITableView!
 
@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menus.count
+        return menuitems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

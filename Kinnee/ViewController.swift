@@ -12,15 +12,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
     //　メニューの数をリストで定義
-    let menus : [String] = ["腕立て伏せ","腹筋"]
-    let sets : [Int] = [3,3]
+    let menuitems = [menuitem]()
+    let menuname = menuitems.name
 
     @IBOutlet weak var myTableView: UITableView!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "HOME"
+        navigationItem.title = "HOME"
         myTableView.dataSource = self
         myTableView.delegate = self
     }
@@ -32,10 +32,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath)
 
-            cell.textLabel?.text = menus[indexPath.row]
-            cell.imageView?.image = UIImage(systemName: menus[indexPath.row])
+        cell.textLabel?.text = menus.name[indexPath.row]
+        cell.imageView?.image = UIImage(systemName: menus[indexPath.row])
 
-            return cell
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,7 +61,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //ここがpushとは違う
         self.present(nextView, animated: true, completion: nil)
     }
-
-
 }
-

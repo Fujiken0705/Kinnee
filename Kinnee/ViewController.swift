@@ -13,7 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
     //　メニューの数をリストで定義
-    let menuitems = Results<Menudata>?.self
+    let menuitems = Results<Menudata>?(<#Results<Menudata>#>)
+
 
     @IBOutlet weak var myTableView: UITableView!
 
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuitems.count
+        return menuitems!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

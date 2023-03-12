@@ -17,6 +17,8 @@
 		D7159E7C29BA4B56001D1B54 /* menudata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7159E7B29BA4B56001D1B54 /* menudata.swift */; };
 		D7159E7F29BAB938001D1B54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D7159E7E29BAB938001D1B54 /* Realm */; };
 		D7159E8129BAB938001D1B54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D7159E8029BAB938001D1B54 /* RealmSwift */; };
+		D7CC11B729BD97FF00C38912 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CC11B529BD97FF00C38912 /* HomeTableViewCell.swift */; };
+		D7CC11B829BD97FF00C38912 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CC11B629BD97FF00C38912 /* HomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		D7159E7329B97497001D1B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7159E7929BA1C45001D1B54 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		D7159E7B29BA4B56001D1B54 /* menudata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menudata.swift; sourceTree = "<group>"; };
+		D7CC11B529BD97FF00C38912 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		D7CC11B629BD97FF00C38912 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				D7159E7B29BA4B56001D1B54 /* menudata.swift */,
 				D7159E6529B97495001D1B54 /* AppDelegate.swift */,
 				D7159E6729B97495001D1B54 /* SceneDelegate.swift */,
+				D7CC11B529BD97FF00C38912 /* HomeTableViewCell.swift */,
+				D7CC11B629BD97FF00C38912 /* HomeTableViewCell.xib */,
 				D7159E6B29B97495001D1B54 /* Main.storyboard */,
 				D7159E6E29B97497001D1B54 /* Assets.xcassets */,
 				D7159E7029B97497001D1B54 /* LaunchScreen.storyboard */,
@@ -144,6 +150,7 @@
 			files = (
 				D7159E7229B97497001D1B54 /* LaunchScreen.storyboard in Resources */,
 				D7159E6F29B97497001D1B54 /* Assets.xcassets in Resources */,
+				D7CC11B829BD97FF00C38912 /* HomeTableViewCell.xib in Resources */,
 				D7159E6D29B97495001D1B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CC11B729BD97FF00C38912 /* HomeTableViewCell.swift in Sources */,
 				D7159E7A29BA1C45001D1B54 /* ModalViewController.swift in Sources */,
 				D7159E6A29B97495001D1B54 /* ViewController.swift in Sources */,
 				D7159E7C29BA4B56001D1B54 /* menudata.swift in Sources */,

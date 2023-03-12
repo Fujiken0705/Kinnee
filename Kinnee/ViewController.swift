@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
     //　メニューの数をリストで定義
-    let menuitems = Results<Menudata>?(<#Results<Menudata>#>)
+    var menuitems: Results<Menudata>!
 
 
     @IBOutlet weak var myTableView: UITableView!
@@ -33,8 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath)
 
-        cell.textLabel?.text = menus.name[indexPath.row]
-        cell.imageView?.image = UIImage(systemName: menus[indexPath.row])
+        cell.textLabel?.text = menuitems.first[indexPath.row] as! String
+        cell.imageView?.image = UIImage(systemName: menuitems[indexPath.row])
 
         return cell
     }

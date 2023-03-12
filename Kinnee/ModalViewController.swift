@@ -25,9 +25,9 @@ class ModalViewController : UIViewController{
     @IBAction func closeModal() {
         self.dismiss(animated: true, completion: nil)
         let newmenu = Menudata()
-        newmenu.name = trainingname.text
-        newmenu.rep = trainingrep.text
-        newmenu.set = trainingset.text
+        newmenu.name = trainingname.text!
+        newmenu.rep = Int(trainingrep.text!)!
+        newmenu.set = Int(trainingset.text!)!
         do{let realm = try Realm()
             let item:Menudata = Menudata(value: ["name" : trainingname,"rep": trainingrep,"set": trainingset])
             try realm.write {

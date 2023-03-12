@@ -10,16 +10,14 @@ import RealmSwift
 
 class Menudata: Object {
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var name : String = ""
-    @objc dynamic var rep : Int = 0
-    @objc dynamic var set : Int = 0
+    @objc dynamic var name:String = ""
+    @objc dynamic var rep:Int = 0
+    @objc dynamic var set:Int = 0
 
     override static func primaryKey() -> String? {
         return "id"
     }
 }
-
-
 //struct menuitem {
 //    private(set) public var name : String
 //    private(set) public var rep : Int

@@ -9,34 +9,34 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     // 振動機能の追加
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
     //　メニューの数をリストで定義
     var menuitems: Results<Menudata>!
 
-
-    @IBOutlet weak var myTableView: UITableView!
-
+    @IBOutlet private weak var myTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "HOME"
         myTableView.dataSource = self
         myTableView.delegate = self
+        myTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
 
+    // TableViewのセルの数を登録したメニューの数にする
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuitems!.count
+        return menuitems?.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTableView.dequeueReusableCell(withIdentifier: "MyTableViewCell", for: indexPath)
-
-        cell.textLabel?.text = menuitems.first[indexPath.row] as! String
-        cell.imageView?.image = UIImage(systemName: menuitems[indexPath.row])
-
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? HomeTableViewCell {
+            return cell
+        }else {
+            return UITableViewCell()
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,12 +54,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-
     @IBAction func showModal(_ sender: Any) {
         let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "addMenuView")
-        nextView.sheetPresentationController?.detents = [.medium(), .large()]
-        //ここがpushとは違う
-        self.present(nextView, animated: true, completion: nil)
+        let goToAddView = storyboard.instantiateViewController(withIdentifier: "addMenuView")
+        goToAddView.sheetPresentationController?.detents = [.medium(), .large()]
+        self.present(goToAddView, animated: true, completion: nil)
     }
 }

@@ -29,10 +29,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }catch (let error) {
             print(error)
         }
+        myTableView.estimatedRowHeight = 120
+        myTableView.rowHeight = UITableView.automaticDimension
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
         do {
             let realm = try Realm()
             menuitems = realm.objects(Menudata.self)
@@ -56,31 +58,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? HomeTableViewCell {
             // セルに表示するデータを取得
             let item = menuitems?[indexPath.item]
-            let menuname = item?.name
-            let menurep = item?.rep
-            let menuset = item?.set
             // CollectionView -> 各Cellにデータを渡したい
-            cell.configure(item: item)
+            cell.configure(item: item!)
             return cell
         }else {
             return UITableViewCell()
         }
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            // 振動
-            feedbackGenerator.selectionChanged()
-
-        case 1:
-            // 振動
-            feedbackGenerator.selectionChanged()
-
-        default:
-            break
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        switch indexPath.row {
+//        case 0:
+//            // 振動
+//            feedbackGenerator.selectionChanged()
+//
+//        case 1:
+//            // 振動
+//            feedbackGenerator.selectionChanged()
+//
+//        default:
+//            break
+//        }
+//    }
 
     @IBAction func showModal(_ sender: Any) {
         let storyboard: UIStoryboard = self.storyboard!

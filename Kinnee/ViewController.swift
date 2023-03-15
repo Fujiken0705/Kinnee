@@ -25,23 +25,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTableView.dataSource = self
         myTableView.delegate = self
         myTableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadFunc(notification:)), name: .tableReloadNotification, object: nil)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+        // Realmから最新のデータを取得する
+        let realm = try? Realm()
         // Realmからデータを取得
         menuitems = realm?.objects(Menudata.self)
 
         // TableViewを更新
         myTableView.reloadData()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-        // Realmから最新のデータを取得する
-        let realm = try? Realm()
-        let results = realm?.objects(Menudata.self)
-
-        // TableViewのデータソースに最新のデータを設定する
-        myTableView.dataSource = Array(results)
-        // テーブルを再描画
-      myTableView.reloadData()
         }
 
     // TableViewのセルの数を登録したメニューの数にする
@@ -57,10 +52,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? HomeTableViewCell {
             // セルに表示するデータを取得
             let item = menuitems?[indexPath.item]
-            // CollectionView -> 各Cellにデータを渡したい
+            // TableView -> 各Cellにデータを渡したい
             cell.configure(item: item!)
             return cell
-        }else {
+        }else{
             return UITableViewCell()
         }
     }
@@ -98,5 +93,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let goToAddView = storyboard.instantiateViewController(withIdentifier: "addMenuView")
         goToAddView.sheetPresentationController?.detents = [.medium(), .large()]
         self.present(goToAddView, animated: true, completion: nil)
+    }
+    @objc func reloadFunc(notification: NSNotification?) {
+        myTableView.reloadData()
+    }
+
+    // セルの並び替えを実装する
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var menuitems: List<Menudata>?
+        let realm = try? Realm()
+        try? realm?.write {
+            menuitems?.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        }
     }
 }

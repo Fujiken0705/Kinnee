@@ -35,5 +35,6 @@ class ModalViewController : UIViewController{
             print("エラー")
         }
         self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .tableReloadNotification, object: nil)
     }
 }

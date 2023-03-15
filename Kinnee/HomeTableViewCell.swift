@@ -16,7 +16,7 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configure(item:Menudata) {
+    func configure(item: Menudata) {
         nameLabel.text = "Name:"+(item.name ?? "Noname")
         repLabel.text = "Rep:"+(item.rep ?? "Unknown")
         setLabel.text = "Set:"+(item.set ?? "Unknown")

@@ -15,6 +15,7 @@ class ModalViewController : UIViewController{
 
     @IBOutlet weak var trainingset: UITextField!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "メニューの追加"

@@ -75,11 +75,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         func goDetailVC(_ sender: Any) {
-            let DetailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-            if let DetailVC = DetailVC {
+            let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+            if let detailVC = detailVC {
                 //値を受け渡す
 
-                present(DetailVC, animated: true, completion: nil)
+                present(detailVC, animated: true, completion: nil)
             }
         }
     }

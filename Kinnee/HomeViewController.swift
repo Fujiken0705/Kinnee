@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // 振動機能の追加
     let feedbackGenerator = UISelectionFeedbackGenerator()
 
@@ -73,20 +73,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.row {
-//        case 0:
-//            // 振動
-//            feedbackGenerator.selectionChanged()
-//
-//        case 1:
-//            // 振動
-//            feedbackGenerator.selectionChanged()
-//
-//        default:
-//            break
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        func goDetailVC(_ sender: Any) {
+            let DetailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+            if let DetailVC = DetailVC {
+                //値を受け渡す
+
+                present(DetailVC, animated: true, completion: nil)
+            }
+        }
+    }
 
     @IBAction func showModal(_ sender: Any) {
         let storyboard: UIStoryboard = self.storyboard!

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D7159E6629B97495001D1B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7159E6529B97495001D1B54 /* AppDelegate.swift */; };
 		D7159E6829B97495001D1B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7159E6729B97495001D1B54 /* SceneDelegate.swift */; };
-		D7159E6A29B97495001D1B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7159E6929B97495001D1B54 /* ViewController.swift */; };
+		D7159E6A29B97495001D1B54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7159E6929B97495001D1B54 /* HomeViewController.swift */; };
 		D7159E6D29B97495001D1B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7159E6B29B97495001D1B54 /* Main.storyboard */; };
 		D7159E6F29B97497001D1B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7159E6E29B97497001D1B54 /* Assets.xcassets */; };
 		D7159E7229B97497001D1B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7159E7029B97497001D1B54 /* LaunchScreen.storyboard */; };
@@ -21,13 +21,14 @@
 		D7CC11BC29BDA4CE00C38912 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CC11BA29BDA4CE00C38912 /* HomeTableViewCell.xib */; };
 		D7CC11BF29BE1A0500C38912 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D7CC11BE29BE1A0500C38912 /* swiftlint.yml */; };
 		D7EE62AB29C240EB00B8F86C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE62AA29C240EB00B8F86C /* Notification.swift */; };
+		D7EE62AD29C2C47700B8F86C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE62AC29C2C47700B8F86C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D7159E6229B97495001D1B54 /* Kinnee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinnee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7159E6529B97495001D1B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7159E6729B97495001D1B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D7159E6929B97495001D1B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7159E6929B97495001D1B54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D7159E6C29B97495001D1B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7159E6E29B97497001D1B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7159E7129B97497001D1B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		D7CC11BA29BDA4CE00C38912 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		D7CC11BE29BE1A0500C38912 /* swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		D7EE62AA29C240EB00B8F86C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		D7EE62AC29C2C47700B8F86C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +75,11 @@
 		D7159E6429B97495001D1B54 /* Kinnee */ = {
 			isa = PBXGroup;
 			children = (
-				D7159E6929B97495001D1B54 /* ViewController.swift */,
+				D7159E6929B97495001D1B54 /* HomeViewController.swift */,
 				D7CC11B929BDA4CE00C38912 /* HomeTableViewCell.swift */,
 				D7CC11BA29BDA4CE00C38912 /* HomeTableViewCell.xib */,
 				D7159E7929BA1C45001D1B54 /* ModalViewController.swift */,
+				D7EE62AC29C2C47700B8F86C /* DetailViewController.swift */,
 				D7159E7B29BA4B56001D1B54 /* menudata.swift */,
 				D7EE62AA29C240EB00B8F86C /* Notification.swift */,
 				D7159E6529B97495001D1B54 /* AppDelegate.swift */,
@@ -193,11 +196,12 @@
 			files = (
 				D7CC11BB29BDA4CE00C38912 /* HomeTableViewCell.swift in Sources */,
 				D7159E7A29BA1C45001D1B54 /* ModalViewController.swift in Sources */,
-				D7159E6A29B97495001D1B54 /* ViewController.swift in Sources */,
+				D7159E6A29B97495001D1B54 /* HomeViewController.swift in Sources */,
 				D7EE62AB29C240EB00B8F86C /* Notification.swift in Sources */,
 				D7159E7C29BA4B56001D1B54 /* menudata.swift in Sources */,
 				D7159E6629B97495001D1B54 /* AppDelegate.swift in Sources */,
 				D7159E6829B97495001D1B54 /* SceneDelegate.swift in Sources */,
+				D7EE62AD29C2C47700B8F86C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,14 +7,13 @@
 import RealmSwift
 import UIKit
 
-class ModalViewController : UIViewController{
+class ModalViewController: UIViewController {
 
     @IBOutlet weak var trainingname: UITextField!
 
     @IBOutlet weak var trainingrep: UITextField!
 
     @IBOutlet weak var trainingset: UITextField!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()

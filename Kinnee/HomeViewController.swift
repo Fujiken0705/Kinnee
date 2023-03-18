@@ -73,17 +73,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        func goDetailVC(_ sender: Any) {
-            let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-            if let detailVC = detailVC {
-                //値を受け渡す
-
-                present(detailVC, animated: true, completion: nil)
-            }
-        }
-    }
-
     @IBAction func showModal(_ sender: Any) {
         let storyboard: UIStoryboard = self.storyboard!
         let goToAddView = storyboard.instantiateViewController(withIdentifier: "addMenuView")
@@ -105,5 +94,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         try? realm?.write {
             menuitems?.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
         }
+    }
+}
+
+extension HomeViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 選択されたセルの情報を取得する
+        let selectedData = "選択されたデータ"
+
+        // 画面遷移先のViewControllerを生成する
+        let detailViewController = DetailViewController()
+        detailViewController.selectedData = selectedData
+
+        // 画面遷移する
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

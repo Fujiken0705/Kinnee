@@ -15,6 +15,12 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var detailSearchButton: UIButton!
     @IBOutlet weak var setContollellLabel: UILabel!
     @IBOutlet weak var setCompleteButton: UIButton!
+    var selectedData: String?
 
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        detailNameLabel.text = selectedData
+        detailRepLabel.text = "3"
+        detailSetLabel.text = "3"
+    }
 }

@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H93-S7-fOI">
-                                <rect key="frame" x="0.0" y="141" width="393" height="610"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H93-S7-fOI">
+                                <rect key="frame" x="0.0" y="167" width="393" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="100" id="mtz-Kv-D67" customClass="HomeTableViewCell" customModule="Kinnee" customModuleProvider="target">
@@ -46,6 +46,7 @@
                             <constraint firstItem="H93-S7-fOI" firstAttribute="top" secondItem="fLv-eH-po3" secondAttribute="top" id="3oI-4S-gkc"/>
                             <constraint firstItem="H93-S7-fOI" firstAttribute="leading" secondItem="fLv-eH-po3" secondAttribute="leading" id="65D-f3-2Nh"/>
                             <constraint firstItem="fLv-eH-po3" firstAttribute="trailing" secondItem="H93-S7-fOI" secondAttribute="trailing" id="EEh-xf-ho3"/>
+                            <constraint firstItem="H93-S7-fOI" firstAttribute="top" secondItem="fLv-eH-po3" secondAttribute="top" constant="64" id="Z2t-qS-ndX"/>
                             <constraint firstItem="fLv-eH-po3" firstAttribute="bottom" secondItem="H93-S7-fOI" secondAttribute="bottom" id="j5V-H9-zhI"/>
                         </constraints>
                     </view>
@@ -56,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfA-ml-2GC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620.61068702290072" y="30.985915492957748"/>
+            <point key="canvasLocation" x="1547.3282442748091" y="30.985915492957748"/>
         </scene>
         <!--Modal View Controller-->
         <scene sceneID="oog-ST-7xM">
@@ -133,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZc-vR-O62" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654.1984732824426" y="63.380281690140848"/>
+            <point key="canvasLocation" x="1547" y="754"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Doy-rr-Ibv">
@@ -201,6 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="UuX-m9-6TN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kFS-VK-AuM"/>
                     <connections>
                         <outlet property="detailNameLabel" destination="5T5-tU-W6b" id="Ncw-40-Vqz"/>
                         <outlet property="detailRepLabel" destination="Cws-BY-iVQ" id="FXs-lU-rI5"/>
@@ -212,25 +214,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrn-yj-cY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2550.3816793893129" y="43.661971830985919"/>
+            <point key="canvasLocation" x="2570" y="31"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="XKz-Ia-bVu">
+        <scene sceneID="uPj-aj-rqI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BsC-bc-XAD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jrz-Pn-IOc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QDM-Z6-rr0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4W-R9-2MC">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hBR-UK-ziY" kind="relationship" relationship="rootViewController" id="uWY-wQ-xXA"/>
+                        <segue destination="hBR-UK-ziY" kind="relationship" relationship="rootViewController" id="tIH-gU-TIf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uFh-MA-hgy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFE-Cj-10j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306.1068702290076" y="30.985915492957748"/>
+            <point key="canvasLocation" x="613" y="10"/>
         </scene>
     </scenes>
     <resources>

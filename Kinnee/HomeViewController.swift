@@ -95,18 +95,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             menuitems?.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
         }
     }
+
 }
 
 extension HomeViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 選択されたセルの情報を取得する
-        let selectedData = "選択されたデータ"
 
-        // 画面遷移先のViewControllerを生成する
-        let detailViewController = DetailViewController()
-        detailViewController.selectedData = selectedData
 
-        // 画面遷移する
-        navigationController?.pushViewController(detailViewController, animated: true)
+        // StoryboardからDetailViewControllerをインスタンス化する
+        if let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            // 画面遷移する
+            let menu = menuitems?[indexPath.row]
+//            detailViewController.detailNameLabel.text = menu?.name
+//            detailViewController.detailRepLabel.text = menu?.rep
+//            detailViewController.detailSetLabel.text = menu?.set
+            self.present(detailViewController, animated: true, completion: nil)
+        }
     }
 }

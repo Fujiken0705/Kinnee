@@ -139,7 +139,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Doy-rr-Ibv">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="VCm-Wt-4rR" customClass="DetailViewController" customModule="Kinnee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VCm-Wt-4rR" customClass="DetailViewController" customModule="Kinnee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sln-Up-RMd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +193,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmZ-48-kYM">
-                                <rect key="frame" x="76" y="722" width="240" height="62"/>
+                                <rect key="frame" x="76" y="665" width="240" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="1セット完了したら押してね"/>
@@ -214,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrn-yj-cY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="31"/>
+            <point key="canvasLocation" x="3495.419847328244" y="30.985915492957748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uPj-aj-rqI">
@@ -233,6 +233,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFE-Cj-10j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="613" y="10"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TIi-1T-T0r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H7y-Mk-vw7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BLy-uB-f0u">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VCm-Wt-4rR" kind="relationship" relationship="rootViewController" id="ery-yX-yyM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwY-0k-P4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568.7022900763359" y="30.985915492957748"/>
         </scene>
     </scenes>
     <resources>

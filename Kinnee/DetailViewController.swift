@@ -4,7 +4,7 @@
 //
 //  Created by KentoFujita on 2023/03/16.
 //
-
+import SafariServices
 import UIKit
 
 class DetailViewController: UIViewController{
@@ -19,8 +19,5 @@ class DetailViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailNameLabel.text = selectedData
-        detailRepLabel.text = "3"
-        detailSetLabel.text = "3"
     }
 }

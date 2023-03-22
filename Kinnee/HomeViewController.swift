@@ -83,19 +83,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         myTableView.reloadData()
     }
 
-    // セルの並び替えを実装する
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        var menuitems: List<Menudata>?
-        let realm = try? Realm()
-        try? realm?.write {
-            menuitems?.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
-        }
-    }
-
 }
 
 extension HomeViewController {
@@ -106,11 +93,11 @@ extension HomeViewController {
         // StoryboardからDetailViewControllerをインスタンス化する
         if let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             // 画面遷移する
-            let menu = menuitems?[indexPath.row]
-//            detailViewController.detailNameLabel.text = menu?.name
-//            detailViewController.detailRepLabel.text = menu?.rep
-//            detailViewController.detailSetLabel.text = menu?.set
             self.present(detailViewController, animated: true, completion: nil)
+            let menu = menuitems?[indexPath.row]
+            detailViewController.detailNameLabel.text = menu?.name
+            detailViewController.detailRepLabel.text = menu?.rep
+            detailViewController.detailSetLabel.text = menu?.set
         }
     }
 }

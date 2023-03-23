@@ -178,13 +178,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaT-Zp-pxm">
-                                <rect key="frame" x="99" y="472" width="179" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="61"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="セット！！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-uK-VUk">
                                 <rect key="frame" x="235" y="602" width="142" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,12 +185,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmZ-48-kYM">
-                                <rect key="frame" x="76" y="665" width="240" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPH-5N-Beq">
+                                <rect key="frame" x="68" y="710" width="240" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="1セット完了したら押してね"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="VCm-Wt-4rR" eventType="touchUpInside" id="g8t-1Q-OMe"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDX-sn-J8m">
+                                <rect key="frame" x="107" y="464" width="179" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="61"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UuX-m9-6TN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -208,8 +211,8 @@
                         <outlet property="detailRepLabel" destination="Cws-BY-iVQ" id="FXs-lU-rI5"/>
                         <outlet property="detailSearchButton" destination="Dof-kj-Xh1" id="uhi-t9-Nu8"/>
                         <outlet property="detailSetLabel" destination="HIH-aF-7z3" id="gs3-XD-B68"/>
-                        <outlet property="setCompleteButton" destination="zmZ-48-kYM" id="54M-oE-CEJ"/>
-                        <outlet property="setContollellLabel" destination="WaT-Zp-pxm" id="4Ua-eb-NU0"/>
+                        <outlet property="doneButton" destination="LPH-5N-Beq" id="qUL-t6-sTo"/>
+                        <outlet property="setContollLabel" destination="fDX-sn-J8m" id="T0b-2m-pSj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrn-yj-cY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

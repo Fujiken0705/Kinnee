@@ -101,6 +101,7 @@ extension HomeViewController {
             detailViewController.detailNameLabel.text = menu?.name
             detailViewController.detailRepLabel.text = menu?.rep
             detailViewController.detailSetLabel.text = menu?.set
+            detailViewController.setContollLabel.text = menu?.set
         }
     }
 }

@@ -24,7 +24,7 @@ class DetailViewController: UIViewController{
     func finishAlert() {
 
         // アラート作成
-        let alert = UIAlertController(title: "1セット終了！", message: "インターバル後にもう一回！", preferredStyle: .alert)
+        let alert = UIAlertController(title: "1set finish！", message: "インターバル後にもう一回！", preferredStyle: .alert)
 
         // アラート表示
         self.present(alert, animated: true, completion: {
@@ -38,7 +38,7 @@ class DetailViewController: UIViewController{
     func completeAlert() {
 
         // アラート作成
-        let alert = UIAlertController(title: "You`ve got it!", message: "お疲れ様でした", preferredStyle: .alert)
+        let alert = UIAlertController(title: "You did it!", message: "お疲れ様でした", preferredStyle: .alert)
 
         // アラート表示
         self.present(alert, animated: true, completion: {
@@ -50,11 +50,19 @@ class DetailViewController: UIViewController{
     }
 
 
-    @IBAction func doneButtonTapped(_ sender: Any) {
-        if setContollLabel.text == "1"{
-            completeAlert()
+    @IBAction func doneButtonTapped(_ sender: Any) {        if setContollLabel.text == "0"{
+        completeAlert()
         }else{
-            print("うまく動くかな")
+            if var controllnum = Int(setContollLabel.text ?? "") {
+                // setContollLabel.textが数字の場合の処理
+                controllnum -= 1
+                setContollLabel.text = String(controllnum)
+                finishAlert()
+
+            } else {
+                // setContollLabel.textが数字でない場合の処理
+                print("error")
+            }
         }
 
     }

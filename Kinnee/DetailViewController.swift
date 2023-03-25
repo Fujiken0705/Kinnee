@@ -50,20 +50,37 @@ class DetailViewController: UIViewController{
     }
 
 
-    @IBAction func doneButtonTapped(_ sender: Any) {        if setContollLabel.text == "0"{
-        completeAlert()
-        }else{
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        //        if setContollLabel.text == "1"{
+        //        setContollLabel.text = "0"
+        //        completeAlert()
+        //        }else{
+        //            if var controllnum = Int(setContollLabel.text ?? "") {
+        //                // setContollLabel.textが数字の場合の処理
+        //                controllnum -= 1
+        //                setContollLabel.text = String(controllnum)
+        //                finishAlert()
+        //
+        //            } else {
+        //                // setContollLabel.textが数字でない場合の処理
+        //                print("error")
+        //            }
+        //        }
+        //    }
+        switch setContollLabel.text {
+        case "0":
+            doneButton.isEnabled = false
+            break
+        case "1":
+            setContollLabel.text = "0"
+            completeAlert()
+        default:
             if var controllnum = Int(setContollLabel.text ?? "") {
                 // setContollLabel.textが数字の場合の処理
                 controllnum -= 1
                 setContollLabel.text = String(controllnum)
                 finishAlert()
-
-            } else {
-                // setContollLabel.textが数字でない場合の処理
-                print("error")
             }
         }
-
     }
 }

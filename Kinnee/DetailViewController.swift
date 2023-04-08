@@ -7,7 +7,7 @@
 import SafariServices
 import UIKit
 
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailRepLabel: UILabel!
@@ -49,7 +49,6 @@ class DetailViewController: UIViewController{
         })
     }
 
-
     @IBAction func doneButtonTapped(_ sender: Any) {
         //        if setContollLabel.text == "1"{
         //        setContollLabel.text = "0"
@@ -81,6 +80,16 @@ class DetailViewController: UIViewController{
                 setContollLabel.text = String(controllnum)
                 finishAlert()
             }
+        }
+    }
+
+
+    @IBAction func detailSearchButtonTapped(_ sender: Any) {
+        let qiitaUrl = NSURL(string: "https://qiita.com")
+
+        if let qiitaUrl = qiitaUrl {
+            let safariViewController = SFSafariViewController(URL: qiitaUrl)
+            presentViewController(safariViewController, animated: false, completion: nil)
         }
     }
 }

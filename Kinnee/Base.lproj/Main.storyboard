@@ -156,6 +156,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="やり方を確認する！！"/>
+                                <connections>
+                                    <action selector="detailSearchButtonTapped:" destination="VCm-Wt-4rR" eventType="touchUpInside" id="LOF-jR-zjX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-BY-iVQ">
                                 <rect key="frame" x="16" y="173" width="182" height="67"/>

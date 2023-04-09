@@ -85,11 +85,11 @@ class DetailViewController: UIViewController {
 
 
     @IBAction func detailSearchButtonTapped(_ sender: Any) {
-        let qiitaUrl = NSURL(string: "https://qiita.com")
+        let url = URL(string: "https://www.google.com/")
 
-        if let qiitaUrl = qiitaUrl {
-            let safariViewController = SFSafariViewController(URL: qiitaUrl)
-            presentViewController(safariViewController, animated: false, completion: nil)
+        if let url = url {
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true, completion: nil)
         }
     }
 }
